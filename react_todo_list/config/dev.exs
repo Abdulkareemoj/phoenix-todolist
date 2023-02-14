@@ -3,9 +3,9 @@ import Config
 # Configure your database
 config :react_todo_list, ReactTodoList.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "pool",
   hostname: "localhost",
-  database: "react_todo_list_dev",
+  database: "todolist",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
