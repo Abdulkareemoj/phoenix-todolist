@@ -54,3 +54,10 @@ defmodule ReactTodoListWeb.Router do
     end
   end
 end
+
+
+scope "/api", ReactTodoListWeb.Api, as: :api do
+  pipe_through :api
+  ...
+  resources "/tasks", TaskController
+end
