@@ -24,8 +24,13 @@ import "phoenix_html"
 // Establish Phoenix Socket and LiveView configuration.
 import {Socket} from "phoenix"
 import {LiveSocket} from "phoenix_live_view"
+// import hello from "./hello"
 import topbar from "../vendor/topbar"
-
+import React from "react";
+import ReactDOM from "react-dom";
+import ReactHello from "./react";
+const hello = document.getElementById("hello");
+ReactDOM.render(<ReactHello name="Phoenix" />, hello);
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let liveSocket = new LiveSocket("/live", Socket, {params: {_csrf_token: csrfToken}})
 
@@ -43,3 +48,5 @@ liveSocket.connect()
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
 
+
+// document.querySelector("section.phx-hero h1").innerHTML = hello("Phoenix");
